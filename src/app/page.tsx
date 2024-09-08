@@ -1,7 +1,7 @@
 'use client'
 import { Chart } from "react-google-charts";
 
-export const data = [
+ const data = [
   ["Year", "Sales", "Expenses"],
   ["2013", 1000, 400],
   ["2014", 1170, 460],
@@ -9,7 +9,7 @@ export const data = [
   ["2016", 1030, 540],
 ];
 
-export const options = {
+ const options = {
   title: "Company Performance",
   hAxis: { title: "Year", titleTextStyle: { color: "#333" } },
   vAxis: { minValue: 0 },
