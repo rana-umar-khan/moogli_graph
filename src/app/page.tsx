@@ -1,30 +1,33 @@
 'use client'
-import { Chart } from "react-google-charts";
-
- const data = [
-  ["Year", "Sales", "Expenses"],
-  ["2013", 1000, 400],
-  ["2014", 1170, 460],
-  ["2015", 660, 1120],
-  ["2016", 1030, 540],
-];
-
- const options = {
-  title: "Company Performance",
-  hAxis: { title: "Year", titleTextStyle: { color: "#333" } },
-  vAxis: { minValue: 0 },
-  chartArea: { width: "50%", height: "70%" },
-};
+import { AppBar, Toolbar } from "@mui/material";
+import CityEmissions from "./Charts/CityEmissions";
+import YearlyEmissions from "./Charts/YearlyEmissions";
+import logo from "../logo.png";
+import Image from "next/image";
+import "../styles/page.css"
 
 export default function Home() {
+
   return (
-    
-  <Chart
-      chartType="AreaChart"
-      width="100%"
-      height="400px"
-      data={data}
-      options={options}
-    />
+    <>
+      <AppBar position="static">
+        <Toolbar variant="regular">
+          <Image
+            src={logo}
+            alt={"logo"}
+            width={200}
+            height={44}
+            style={{ filter: "brightness(0) invert(1)" }} />
+        </Toolbar>
+
+      </AppBar>
+      <div className="graph">
+        <CityEmissions />
+      </div>
+      <div className="graph">
+        <YearlyEmissions />
+      </div>
+      
+    </>
   );
 }
