@@ -14,7 +14,12 @@ const options = {
   title: "Direct and Indirect Emissions",
   vAxis: { title: "Scope", titleTextStyle: { color: "#333" } },
   hAxis: { title: "Total CO2 emissions (kg of CO2e)", minValue: 0 },
-  chartArea: { width: "50%", height: "70%" },
+  chartArea: { width: "70%", height: "85%" },
+  animation: {
+    duration: 1000,
+    easing: "linear",
+    startup: true,
+  }
 };
 
 export default function YearlyEmissions() {
@@ -52,7 +57,7 @@ export default function YearlyEmissions() {
 
   return (
     <>
-      <div>
+      <div className='filter-bar'>
         <div className='filter-title'>
           Filters:
         </div>

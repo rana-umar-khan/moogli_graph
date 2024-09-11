@@ -16,13 +16,18 @@ const options = {
   title: "City Emissions",
   vAxis: { title: "Location", titleTextStyle: { color: "#333" } },
   hAxis: { title: "CO2 emissions (kg of CO2e)", minValue: 0 },
-  chartArea: { width: "50%", height: "70%" },
+  chartArea: { width: "70%", height: "70%" },
+  animation: {
+    duration: 1000,
+    easing: "linear",
+    startup: true,
+  }
 };
 
 export default function CityEmissions() {
   const [city, setCity] = useState("");
   const [fuelType, setFuelType] = useState("");
-  const [chartType, setChartType] = useState<GoogleChartWrapperChartType>("Bar");
+  const [chartType, setChartType] = useState<GoogleChartWrapperChartType>("BarChart");
 
   let filteredDataset = CityEmissionData;
 
@@ -49,7 +54,7 @@ export default function CityEmissions() {
 
   return (
     <>
-      <div>
+      <div className='filter-bar'>
         <div className='filter-title'>
           Filters:
         </div>
@@ -108,7 +113,7 @@ export default function CityEmissions() {
         <Chart
           chartType={chartType}
           width="95%"
-          height="500px"
+          height="600px"
           data={filteredDataset}
           options={options}
         />

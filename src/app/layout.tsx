@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
 	const router = useRouter();
 	const path = usePathname();
-	
+
 	return (
 		<html lang="en" className={roboto.className}>
 			<body>
@@ -35,8 +35,8 @@ export default function RootLayout({
 									alt={"logo"}
 									width={200}
 									height={44}
-									style={{ filter: "brightness(0) invert(1)" }} />
-								<Box sx={{ flexGrow: 1, display: { md: 'flex' }, gap: '25px', marginLeft: '25px' }}>
+									style={{ filter: "brightness(0) invert(1)", paddingTop: '7px' }} />
+								<Box sx={{ flexGrow: 1, display: { md: 'flex' }, gap: '25px', marginLeft: '40px' }}>
 									<Button
 										key={'city'}
 										className={path.includes("CityEmissions") ? 'active-btn' : ''}
@@ -72,8 +72,7 @@ export default function RootLayout({
 							</Toolbar>
 						</AppBar>
 						<div className='graph'>
-							<div>
-								{children}</div>
+							{children}
 						</div>
 					</ThemeProvider>
 				</AppRouterCacheProvider>
