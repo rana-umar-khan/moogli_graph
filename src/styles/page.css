@@ -1,3 +1,32 @@
 .graph {
-    padding: 20px;
+    padding: 40px 60px;
+}
+
+.active-btn {
+    background-color: #303f9f !important;
+}
+
+.filter-title {
+    font-size: 20px;
+    margin-left: 12px;
+}
+
+.filters {
+    padding: 15px 0 20px 0;
+    display: flex;
+    justify-content: space-between;
+
+    .filter {
+        margin-left: 10px;
+    }
+
+    .toggle-button {
+        text-wrap: nowrap;
+    }
+}
+
+.chart {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
 }

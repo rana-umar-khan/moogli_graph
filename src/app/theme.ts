@@ -16,9 +16,7 @@ const theme = createTheme({
     palette: {
         primary: indigo,
         secondary: teal,
-    },
-
-},
-);
+    }
+});
 
 export default theme;
